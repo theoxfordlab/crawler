@@ -1,0 +1,35 @@
+environment: local
+
+spring:
+  datasource:
+    url:
+      jdbc:postgresql://127.0.0.1/crawler
+    username:
+      crawler
+    password:
+    platform:
+      postgres
+    driver-class-name:
+      org.postgresql.Driver
+  jpa:
+    database-platform:
+      org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    generate-ddl: false
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port:
+    8085
+
+logging:
+  level:
+    org:
+      springframework: INFO
+      hibernate:
+        SQL: DEBUG
+        type: TRACE
+        type.descriptor.sql.BasicBinder: TRACE # For Bind parameters
